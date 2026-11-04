@@ -623,22 +623,47 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 
 | Day | Work |
 |---|---|
-| **Thu 5** | **Grant the Claude GitHub App push access to `RSGISagent/AEO26_AgenticAI_Workshop`.** Review and push the data package. Write CLAUDE.md, the harness and the research cards. **Update the README's prerequisites (Pro + GitHub) and notify registrants.** |
-| **Fri 6** | Setup script and environment test. Capture the screenshot walkthrough. Run cards R1/R2 in Pro sessions. Build the leaderboard. Send the pre-work email (walkthrough 00–06). |
-| **Sat 7** | Slides P1–P4 (P2 with approval). Local-AI screenshots. Backup recordings. **Content freeze.** |
-| **Sun 8** | Full dry run including a 90-min agent run. Re-check screenshots against the UI. |
-| **Mon 9** | Start two presenter backup runs at 08:00 so results exist whatever happens, then deliver. |
+| **Thu 5** | Review the data package **in staging**. Write CLAUDE.md, the harness and the research cards **in staging**. Draft the README prerequisites change (Pro + GitHub) and notify registrants through the organisers; that notice doesn't depend on the repo. |
+| **Fri 6** | In staging: setup script and environment test, R1/R2 runs in Pro sessions, the leaderboard. Capture the screenshot walkthrough against staging. Send the pre-work email (walkthrough 00–06). |
+| **Sat 7** | Slides P1–P4 (P2 with approval). Local-AI screenshots. Backup recordings. **Content freeze in staging.** |
+| **Sun 8** | Full dry run **against staging**, including a 90-min agent run and a fresh-account walkthrough. Re-check screenshots against the UI. **If the promotion gate (B14) passes, a presenter promotes staging to the AEO repo.** |
+| **Mon 9** | Start two presenter backup runs at 08:00 on the promoted AEO repo, then deliver. |
 
 ## B13. Status and open items
 
-- **Data package:** a subagent started building it on 5 Nov in a local staging repo that mirrors this layout. Nothing has been pushed yet. Its results (AOIs, file sizes, gaps) will be reported back when it finishes.
+- **Data package:** a subagent started building it on 5 Nov in a local staging repo that mirrors this layout. It has no git remote, and nothing has been pushed. Its results (AOIs, file sizes, gaps) will be reported back when it finishes.
+- **AEO repo access:** `envirotechnica` was added as a collaborator on 5 Nov. **Rule: the AEO repo is production. Nothing is pushed to it until the work is complete and tested (B14).** All development happens in staging.
 - **Needs you:**
-  1. Install the Claude GitHub App with push access on the AEO26 repo, so the data and materials can be pushed.
+  1. Decide where staging lives, so work persists beyond this ephemeral container.
   2. Share `waratah_mcp`. No repository by that name is visible to this session.
   3. Decide who emails registrants about the Pro requirement.
   4. Get approval for the Monaro content.
   5. Choose the leaderboard route (PR or Issue form).
   6. Confirm 3–4 helpers.
+
+## B14. Staging and promotion to production
+
+The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is what participants fork. Agents never push to it. A presenter promotes to it once, deliberately, after testing.
+
+**Staging** is a separate repo with the same layout, used for all development, agent runs and dry runs. Fresh test accounts fork staging, not production.
+
+**Promotion gate.** All of these must be true before anything goes to the AEO repo:
+
+- [ ] Everything in Part A §9 and B11 is ticked.
+- [ ] The CI size check passes: `data/` ≤ 300 MB, every file < 45 MB.
+- [ ] Every row of `data/MANIFEST.csv` has a resolvable source and licence. Any `licence_verified = no` item is resolved or removed.
+- [ ] `pytest` and `ruff` pass. The harness verifies the fold hash from a clean clone.
+- [ ] A fresh Pro account plus a fresh GitHub account completes walkthrough 00–11 against staging in under 30 min, with no helper intervention.
+- [ ] At least two research cards ran 90 min unattended and produced a PR that passes Part A's audit checklist.
+- [ ] Monaro and waratah_mcp material is cleared for public release, or kept out of the repo.
+- [ ] A presenter has signed off.
+
+**How to promote:**
+1. Open **one PR from staging to the AEO repo's `main`**, squashed so participants don't clone staging history.
+2. Adam reviews it.
+3. **A human merges it.**
+4. Tag the merge `aeo26-v1.0`.
+5. Any fix after promotion goes through staging, then a new PR.
 
 ## Part B references (checked with Scite on 5 Nov 2026, none retracted; metadata checked against Crossref)
 
