@@ -641,6 +641,14 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
   5. Choose the leaderboard route (PR or Issue form).
   6. Confirm 3–4 helpers.
 
+
+**Update, 5 Nov 2026 (second build session):**
+- **Staging is attached and cloned.** At 00:19 UTC it held only the seed commit `15d6ab1`; the data agent has not reached its first milestone yet.
+- **Leaderboard route: decided as an Issue form** on production. A GitHub Action parses the submissions into `leaderboard/` (W6). This replaces the "PR or Issue form" choice in B5.
+- **Presentations: decided as outlines and speaker notes only** (no slide decks), in ClaudeTraining `AEO26_Workshop/presentations/` (W9).
+- **Registrant email drafted:** `AEO26_Workshop/drafts/registrant_email_DRAFT.md`. It needs presenter approval and a decision on who sends it.
+- **Still open:** waratah_mcp access; who sends the email; Monaro P2 clearance; the 3–4 helpers; the production licence.
+
 ## B14. Staging and promotion to production
 
 The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is what participants fork. Agents never push to it. A presenter promotes to it once, deliberately, after testing.
