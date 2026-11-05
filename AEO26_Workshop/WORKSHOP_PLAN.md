@@ -661,6 +661,7 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 **Decisions, 5 Nov 2026 (presenter):**
 - **TESSERA is dropped from the repo** (its data licence is unpublished). AlphaEarth (CC BY 4.0) is the committed foundation-model arm. TESSERA stays an optional run-time fetch via `geotessera`, recorded in provenance as not redistributed.
 - **The 30 CC BY-NC / BY-NC-SA ALA records are excluded**; the glider-distance columns are regenerated, and folds and points are unchanged.
+- **Plan wording (fixed after presenter review):** participants need a **personal Pro plan (or a higher individual plan, such as Max)**. Team plans and some Enterprise seats do support cloud sessions (B1), but organisations control them, so the README, web page, walkthrough and registrant email now say not to rely on a work seat.
 - **Promotion target:** a presenter creates `main` in production (as its default branch) before promotion; the B14 PR then targets `main` as written.
 - **Free track (W7)** is built in `coursework/free_track/`. Its planted-error key is kept with the presenters (`helpers/`), not in the public repo. Note: in this data the spatial vs random CV gap is small (RF 0.904 vs 0.912), so present that lesson honestly.
 

@@ -21,19 +21,19 @@ Hi everyone,
 
 We're looking forward to seeing you on **Monday 9 November, 09:00–12:30** in nipaluna/Hobart. One important update:
 
-- **What you need:** a personal Claude **Pro (or higher)** plan and a free personal GitHub account. A free Claude account is no longer enough for the hands-on part.
+- **What you need:** a personal Claude **Pro** plan (or a higher individual plan, such as Max) and a free personal GitHub account. A free Claude account is no longer enough for the hands-on part, and a work Team or Enterprise seat may be blocked.
 - **By when:** before Monday. The setup takes about 20 minutes.
 - **Why:** the hands-on hour uses Claude Code on the web, which requires a paid plan.
 
 ### What you need
 
-- [ ] A **personal** Claude account on a **Pro, Max, Ultra or Team** plan (or an Enterprise premium / Chat + Claude Code seat). Pro is a monthly subscription that you can cancel afterwards. Prices vary by region: https://claude.com/pricing
+- [ ] A **personal** Claude account on an individual **Pro** plan (or a higher individual plan, such as Max). Pro is a monthly subscription that you can cancel afterwards. Prices vary by region: https://claude.com/pricing
 - [ ] A free **personal** GitHub account: https://github.com
 - [ ] A laptop with a modern web browser
 
 ### Why a personal account
 
-Organisational Claude and GitHub accounts can have settings that block this workshop. For example, an administrator may need to enable the GitHub connection, or cloud sessions may be switched off or restricted. Personal accounts avoid these surprises on the day.
+Organisational Claude and GitHub accounts can have settings that block this workshop. For example, an administrator may need to enable the GitHub connection, or cloud sessions may be switched off or restricted. Personal accounts avoid these surprises on the day, so please use one even if you already have a Team or Enterprise seat through work.
 
 ### If you can't get Pro
 
