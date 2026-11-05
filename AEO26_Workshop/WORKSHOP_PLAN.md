@@ -650,6 +650,14 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 - **Staging progress (5 Nov):** W1 prerequisites, W2 harness and CLAUDE.md, W3 research cards, W4 setup script, W5 setup walkthrough and W6 leaderboard are pushed. The CLI the walkthrough and CLAUDE.md use is **`aeo26-check`**; read it wherever B4 says `check-tools`. Presentation outlines (W9) are in `presentations/`.
 - **Still open:** waratah_mcp access; who sends the email; Monaro P2 clearance; the 3–4 helpers; the production licence.
 
+**Data package COMPLETE (5 Nov 2026, staging commit `43750e7`).** Checked: `scripts/BUILD_STATUS.md` = COMPLETE; `data/` holds 114 files, 210 MB, the largest 21.4 MB; folds SHA-256 `d2481ab0…9f5b` verifies through `aeo26-check`; 155 tests pass. These findings supersede the corresponding assumptions in B5/B6:
+- **AOIs:** A = **Tallaganda** (west of Braidwood; training; 52 % burnt by FESM), B = **Badja/Countegany** (transfer test; 72 km away, a different fire; 67 % burnt). The fire names are unverified, so keep them off slides until they're checked.
+- **WorldCover 2020 is not a noisy post-fire label.** Only 0.7–6.4 % of burnt pre-fire forest is labelled non-tree, the same rate as unburnt forest. It acts as a forest-*land* label and cannot validate canopy change. R4's label-disagreement story therefore centres on **Hansen (fire scorch counted as loss) vs DEA Land Cover and NFSWVD** (forest drops in 2020 and recovers by 2022).
+- **Transfer confound:** Hansen dates the scorch loss to 2019 in A but 2020 in B. Under a "no loss 2001–2019" rule, the 2020 forest fraction is about 28 % in A vs 67 % in B. WorldCover 2020 stays the default label, and "hansen30" is not used for A→B transfer.
+- **Other notes:** embeddings are calendar-year, so "2019" includes the start of the fires. Autumn 2022 is the cloudiest epoch (median 7–8 clear observations). 22 TESSERA point-years are missing (all in B).
+- **New promotion-gate items (B14):** the TESSERA data licence is unpublished (resolve with its authors, or drop it from production); 30 of the 1,445 ALA records are CC BY-NC/-NC-SA (exclude them from the public repo?); the FESM licence version is unstated; choose a licence for the derived data.
+- **Production has no `main` branch.** Its only branch is `claude/aeo-workshop-repo-6762qi` (at `c0dd546`). B14's "PR to production's `main`" needs a decision: target that branch, or have a presenter create `main` first.
+
 ## B14. Staging and promotion to production
 
 The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is what participants fork. Agents never push to it. A presenter promotes to it once, deliberately, after testing.
