@@ -658,6 +658,12 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 - **New promotion-gate items (B14):** the TESSERA data licence is unpublished (resolve with its authors, or drop it from production); 30 of the 1,445 ALA records are CC BY-NC/-NC-SA (exclude them from the public repo?); the FESM licence version is unstated; choose a licence for the derived data.
 - **Production has no `main` branch.** Its only branch is `claude/aeo-workshop-repo-6762qi` (at `c0dd546`). B14's "PR to production's `main`" needs a decision: target that branch, or have a presenter create `main` first.
 
+**Decisions, 5 Nov 2026 (presenter):**
+- **TESSERA is dropped from the repo** (its data licence is unpublished). AlphaEarth (CC BY 4.0) is the committed foundation-model arm. TESSERA stays an optional run-time fetch via `geotessera`, recorded in provenance as not redistributed.
+- **The 30 CC BY-NC / BY-NC-SA ALA records are excluded**; the glider-distance columns are regenerated, and folds and points are unchanged.
+- **Promotion target:** a presenter creates `main` in production (as its default branch) before promotion; the B14 PR then targets `main` as written.
+- **Free track (W7)** is built in `coursework/free_track/`. Its planted-error key is kept with the presenters (`helpers/`), not in the public repo. Note: in this data the spatial vs random CV gap is small (RF 0.904 vs 0.912), so present that lesson honestly.
+
 ## B14. Staging and promotion to production
 
 The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is what participants fork. Agents never push to it. A presenter promotes to it once, deliberately, after testing.
