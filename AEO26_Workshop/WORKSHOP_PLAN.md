@@ -634,7 +634,7 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 - **Data package:** a subagent started building it on 5 Nov in a local staging repo that mirrors this layout. It has no git remote, and nothing has been pushed. Its results (AOIs, file sizes, gaps) will be reported back when it finishes.
 - **AEO repo access:** `envirotechnica` was added as a collaborator on 5 Nov. **Rule: the AEO repo is production. Nothing is pushed to it until the work is complete and tested (B14).** All development happens in staging.
 - **Needs you:**
-  1. Decide where staging lives, so work persists beyond this ephemeral container.
+  1. ~~Decide where staging lives~~ **Decided 5 Nov: staging is branch `claude/dazzling-goldberg-b6k2ns` of `envirotechnica/SAIGE`** ([link](https://github.com/envirotechnica/SAIGE/tree/claude/dazzling-goldberg-b6k2ns)). It is seeded from production commit `c0dd546`, with build scripts committed and data pushed at milestones.
   2. Share `waratah_mcp`. No repository by that name is visible to this session.
   3. Decide who emails registrants about the Pro requirement.
   4. Get approval for the Monaro content.
@@ -645,7 +645,7 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 
 The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is what participants fork. Agents never push to it. A presenter promotes to it once, deliberately, after testing.
 
-**Staging** is a separate repo with the same layout, used for all development, agent runs and dry runs. Fresh test accounts fork staging, not production.
+**Staging** is branch `claude/dazzling-goldberg-b6k2ns` of `envirotechnica/SAIGE`. Its root layout is the same as production, and it is used for all development, agent runs and dry runs. Fresh test accounts work from staging, not production. Because staging is a branch of another repo, rehearsals either use that branch directly or a fork of SAIGE with this branch checked out. Note too that the data package's history stays in SAIGE permanently.
 
 **Promotion gate.** All of these must be true before anything goes to the AEO repo:
 
