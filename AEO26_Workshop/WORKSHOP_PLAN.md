@@ -647,6 +647,7 @@ Drawn from the `RSGISagent/MonaroGrasslands` docs (read 5 Nov 2026). Quote numbe
 - **Leaderboard route: decided as an Issue form** on production. A GitHub Action parses the submissions into `leaderboard/` (W6). This replaces the "PR or Issue form" choice in B5.
 - **Presentations: decided as outlines and speaker notes only** (no slide decks), in ClaudeTraining `AEO26_Workshop/presentations/` (W9).
 - **Registrant email drafted:** `AEO26_Workshop/drafts/registrant_email_DRAFT.md`. It needs presenter approval and a decision on who sends it.
+- **Staging progress (5 Nov):** W1 prerequisites, W2 harness and CLAUDE.md, W3 research cards, W4 setup script, W5 setup walkthrough and W6 leaderboard are pushed. The CLI the walkthrough and CLAUDE.md use is **`aeo26-check`**; read it wherever B4 says `check-tools`. Presentation outlines (W9) are in `presentations/`.
 - **Still open:** waratah_mcp access; who sends the email; Monaro P2 clearance; the 3–4 helpers; the production licence.
 
 ## B14. Staging and promotion to production
