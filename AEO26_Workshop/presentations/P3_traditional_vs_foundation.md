@@ -84,6 +84,7 @@ Most published disagreements between these camps come down to evaluation. Ploton
 ## 6. How to read your agent's results at 12:00 (3 min)
 
 **On screen**
+0. **Start with `AUDIT.md`:** your auditor subagent's verdict (PASS/FIX). Were its must-fix items fixed? It is a second opinion, not yours
 1. **Folds:** did it use `folds_v1.csv` via the harness (hash verified)? Any random-fold number is **not** a headline (audit checks 5, 6)
 2. **Baselines:** does the method beat the trivial baseline and the reference RF, on the same folds? (checks 5, 10)
 3. **Maxima:** how many rows did it add to `results/registry.csv`? Is "best" shown beside the distribution? (checks 1, 10)
@@ -91,7 +92,7 @@ Most published disagreements between these camps come down to evaluation. Ploton
 5. **Areas:** EPSG:3577 and error-adjusted intervals? (check 3)
 
 **Speaker notes**
-In twenty-five minutes you open your agent's pull request. Use these five questions alongside the ten-point audit checklist. First, folds: confirm the harness loaded the committed, hash-checked spatial folds; random-fold numbers may appear but must never be the headline. Second, baselines: a foundation model that does not beat the reference random forest on the same folds has not won. Third, maxima: count the registry rows; if your agent tried thirty configurations and reports the best, that is the Monaro red-team finding again. Fourth, intervals: if the paired interval for the difference includes zero, say "no evidence of a difference". With five folds, intervals are wide. Fifth, areas: equal-area projection, error-adjusted intervals. Then compare yours with the leaderboard distribution.
+In twenty-five minutes you open your agent's pull request. Start with AUDIT.md, the report from your auditor subagent: its verdict and its must-fix list, and whether those were fixed. Treat it as a second opinion, not the answer. Then ask these five questions yourself, alongside the ten-point audit checklist. First, folds: confirm the harness loaded the committed, hash-checked spatial folds; random-fold numbers may appear but must never be the headline. Second, baselines: a foundation model that does not beat the reference random forest on the same folds has not won. Third, maxima: count the registry rows; if your agent tried thirty configurations and reports the best, that is the Monaro red-team finding again. Fourth, intervals: if the paired interval for the difference includes zero, say "no evidence of a difference". With five folds, intervals are wide. Fifth, areas: equal-area projection, error-adjusted intervals. Then compare yours with the leaderboard distribution.
 
 **References:** Ploton et al. (2020); Olofsson et al. (2014); Botvinik-Nezer et al. (2020).
 
