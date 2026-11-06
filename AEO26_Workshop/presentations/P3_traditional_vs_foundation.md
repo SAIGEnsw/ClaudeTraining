@@ -40,13 +40,13 @@ Before we talk about foundation models, give the traditional approach its due. B
 
 **On screen**
 - **AlphaEarth Foundations:** 64-d annual embeddings; claims accurate mapping from **sparse labels** (Brown et al., 2025, *preprint*)
-- **TESSERA:** 128-d temporal embeddings of surface spectra (Feng et al., 2025, *preprint*)
+- **TESSERA:** 128-d temporal embeddings of surface spectra (Feng et al., 2025, *preprint*); **not in the workshop repo** (data licence unpublished): an optional run-time fetch via `geotessera`
 - **Presto:** lightweight pre-trained transformer for pixel time series (Tseng et al., 2023, *preprint*)
 - **Prithvi-EO-2.0:** multi-temporal image foundation model (Szwarcman et al., 2024, *preprint*)
 - All four are **preprints**: claims, not settled evidence
 
 **Speaker notes**
-The foundation-model arm of your research cards uses two of these. AlphaEarth gives a sixty-four-dimensional embedding per ten-metre pixel per year, and its authors claim accurate mapping from sparse labels. TESSERA gives a hundred-and-twenty-eight-dimensional embedding built from the time series of surface spectra. Presto is a small transformer for pixel time series, which Adam's Monaro work probed. Prithvi-EO-2.0 is a multi-temporal image model, a stretch option. The attraction is clear: someone else has done the expensive pre-training, so a linear probe on a few hundred labels might match a model trained from scratch. But note the labels on screen. All four are preprints. Treat their headline numbers as claims to test, which is what your agent is doing.
+The foundation-model arm of your research cards uses AlphaEarth, which ships in your repo under a CC BY 4.0 licence. It gives a sixty-four-dimensional embedding per ten-metre pixel per year, and its authors claim accurate mapping from sparse labels. TESSERA gives a hundred-and-twenty-eight-dimensional embedding built from the time series of surface spectra. It is not in your repo, because its data licence is unpublished. Your agent may fetch it at run time with geotessera as an optional stretch, but must not commit the values. Presto is a small transformer for pixel time series, which Adam's Monaro work probed. Prithvi-EO-2.0 is a multi-temporal image model, a stretch option. The attraction is clear: someone else has done the expensive pre-training, so a linear probe on a few hundred labels might match a model trained from scratch. But note the labels on screen. All four are preprints. Treat their headline numbers as claims to test, which is what your agent is doing.
 
 **References:** Brown et al. (2025, preprint); Feng et al. (2025, preprint); Tseng et al. (2023, preprint); Szwarcman et al. (2024, preprint).
 
