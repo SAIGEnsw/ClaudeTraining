@@ -689,6 +689,51 @@ The AEO repo (`RSGISagent/AEO26_AgenticAI_Workshop`) is **production**: it is wh
 4. Tag the merge `aeo26-v1.0`.
 5. Any fix after promotion goes through staging, then a new PR.
 
+## B15. Update, 6 Nov 2026: subagent workflows and a lean dataset (presenter decisions)
+
+These decisions supersede the parts of B2, B4, B5 and B6 named below. The earlier text is left as the record.
+
+- **Accounts:** assume every participant has **Pro**. The free track (`coursework/free_track/`) is only a fallback; pairing and guest passes remain contingencies (B9).
+- **New learning outcome (adds to B2):** 7. **Orchestrate an autonomous workflow with subagents.** Delegate parallel method arms to named subagents with complete briefs, then have an independent **auditor** subagent review the work before the PR ("agents reviewing agents", as in P2).
+- **Hands-on hour (B4):**
+  - The read-only tour (min 30–40) opens with a warm-up in Plan mode: three built-in, read-only Explore subagents read the data, the harness and the cards in parallel [verify in rehearsal].
+  - The launch (min 40–55) uses a card whose mission brief names the project subagents.
+- **Repo (B5): four project subagents** in `.claude/agents/`, which load automatically in cloud sessions ([sub-agents docs](https://code.claude.com/docs/en/sub-agents)):
+
+  | Subagent | Model | Role |
+  |---|---|---|
+  | `traditional-arm` | sonnet | Traditional arm |
+  | `embedding-arm` | sonnet | AlphaEarth arm |
+  | `cartographer` | haiku | Maps and figures |
+  | `auditor` | sonnet | Independent review; edits only `AUDIT.md` |
+
+  - **Workflow:**
+    1. The orchestrator registers the baseline and reference model itself.
+    2. The two arms run **in parallel**.
+    3. The orchestrator compares them.
+    4. The cartographer makes the maps.
+    5. The auditor reviews the work; the orchestrator fixes what it finds, and the auditor re-checks once.
+    6. The orchestrator opens the PR.
+  - At most 4 subagent runs plus 1 re-audit per research run, with no nesting.
+  - `append_registry` is made safe for concurrent writers.
+  - `CLAUDE.md` is shortened.
+  - **Research cards are cut to R1–R5:** R1 woody map + A→B transfer (new `transfer_validate` helper); R2 fire change and recovery; R3 few labels; R4 visual story; R5 your own. The old R4 (label noise) goes with the extra label sources.
+- **Data (B6): the lean package.**
+  - 2 AOIs × **3 years** (2019, 2020, 2025); 2022 is dropped.
+  - **One 28-column points table per AOI:** bands + NDVI/NDMI and a **woody** label per year (DEA Land Cover lifeform, 30 m: the forest proxy), fire severity (FESM, 0–4), distance to the nearest pre-fire glider record, fold and sampling weight.
+  - AlphaEarth point embeddings only.
+  - Rasters: S2 composites, fire severity and woody cover.
+  - Removed from `data/`: Hansen, WorldCover, NFSWVD, DEA level 3/4/canopy cover, Copernicus DEM, raw ALA records and the QA tables. They stay reproducible through the full build, which writes to the git-ignored `build/full/`.
+  - The folds and points are unchanged.
+- **New risks:**
+  - Subagent use counts toward the Pro usage limits, and "running several sessions or subagents at once multiplies token usage" ([costs docs](https://code.claude.com/docs/en/costs)). So the B11 90-minute rehearsal must run the **full subagent workflow on a Pro account** and record usage. If limits bite, move more subagents to `haiku`.
+  - If the cloud environment expires, running subagents stop. The rehearsal must confirm a run survives the laptop being closed for 90 minutes.
+- **B11 additions:**
+  - [ ] Rehearse the Explore warm-up in Plan mode.
+  - [ ] Confirm the project subagents load in a fresh fork's cloud session.
+  - [ ] Confirm two subagents can append to the registry at the same time.
+- **Promotion mechanics (B14), action needed:** `envirotechnica/SAIGE` shares no history with production, so GitHub cannot open a PR between them. Instead, a presenter with production access creates `main`, pushes a **single squashed snapshot** of the staging tree to a new branch in production, and opens the PR there. This keeps SAIGE's history (including the removed TESSERA files) out of production. The step-by-step commands are to be written before Sunday.
+
 ## Part B references (checked with Scite on 5 Nov 2026, none retracted; metadata checked against Crossref)
 
 **Peer-reviewed**
